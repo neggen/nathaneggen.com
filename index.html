@@ -71,7 +71,7 @@
 											</thead>
 											<tbody>
 												<tr>
-													<td><a href="">Graduate Researcher</a></td>
+													<td><a href="file:///C:/Users/Work/Documents/GitHub/neggen.github.io/index.html#grad">Graduate Researcher</a></td>
 													<td>Successfully created, proposed, developed, and published novel research.</td>
 													<td>Data Analysis, Technical and Proposal Writing, Python, Project Management</td>
 												</tr>
@@ -105,8 +105,76 @@
 										</table>
 									</div>
 
-								<!--<p>In graduate school I worked with Integral Field Spectroscopy data. This data is a more advanced form of the more typical single-slit spectroscopy </p>-->
+								<!--<p> </p>-->
 								
+							</article>
+
+							<!-- Graduate Researcher -->
+							<article id="grad">
+								<ul class="actions">
+									<li><a href="file:///C:/Users/Work/Documents/GitHub/neggen.github.io/index.html#work" class="button">&larr; Work</a></li>
+								</ul>
+								<h2>Graduate Researcher</h2>
+								<span class="image fit"><img src="images/pox186_hst_full_2004.jpg" alt="" /><caption><font size = "-1">Image Credit: Podevin, J.f., 2006</font></caption></span>
+								<h4 class="major">Blow-away in the Extreme Low-mass Starburst Galaxy Pox 186</h4>
+								
+								<h4>Overcoming the Data</h4>								
+								<p>In graduate school I primarily worked with Integral Field Spectroscopy (IFU) data, a powerful form of data that includes both spatial and spectral dimensions, allowing for the creation of images of a galaxy at every wavelength, or color. The reduction of this form of data was automated due to each exposure having 750 spectra, each needing to be calibrated and then spatially aligned into a datacube. To accomplish this I used self written python scripts, and parts of the <a href="https://gmos-ifu-1-data-reduction-tutorial-gemini-iraf.readthedocs.io/en/latest/">provided reduction pipeline</a> with some personal tweaks. After, all five exposures were combined into a single datacube using custom python scripts. The self written python scripts can be found <a href="https://github.com/neggen/Astrophysics-python-scripts/">on github.</a></p> 
+
+								<p>Two major problems with the data were discovered during the reduction process. When combined, these problems made the original goal with the data impossible to achieve. By identifying the limitations in the data that these problems created, and what they restricted in terms of analysis, a new avenue of research was found among an aspect of the data that wasn't affected. This aspect was the distribution of light within a narrow wavelength range, and what it implied about the motions of the material that emitted it.</p>
+
+								<p>More detail about the data reduction process, and how the problems with the data were overcame can be found <a href="file:///C:/Users/Work/Documents/GitHub/neggen.github.io/index.html#IFU">here.</a></p>
+
+								<h4>Analysis of the Data</h4>
+								<p>To analyze and model the interesting aspects of the data, a Markov Chain Monte Carlo (MCMC) fitting technique was used. Each of the over 1600 spectra, subsampled from the original 750, was fit automatically with a model containing 6 parameters. Maps of the 6 parameters were then used to make inferences about the kinematic structure of the galaxy, and what it implied about the galaxies history and future. Each fit used 100 "walkers", each their own independent fit of the model, to measure the distribution of the parameters in the parameter space. The best fit was then determined from that distribution. Below is a cornerplot of the six parameters of the model for one of the spectra, showing their individual and relative distributions.</p>
+
+								<span class="image main"><img src="images/cornerplot.png" alt="" /><caption>The blue lines denote the distribution maximum, and dashed black lines denote +/- 1&sigma;.</caption></span>
+
+								<h4>Giving the story of Pox 186 its due</h4>
+								<p>Even before the MCMC analysis, Pox 186 seemed to be a special case with a unique story. The original reason for attaining the IFU data was to investigate this story. When at first when it became clear the data had problems, but still pointed to Pox being more extreme than anticipated, it was decided that the story of Pox may be compelling enough to earn time on the Hubble Space Telescope (HST). This first proposal was submitted in spring 2019, and was rejected. The rejection proved the importance of telling a good story. It did not matter the reality of the situation if that reality was not conveyed in a compelling way. So the MCMC analysis went ahead, and a year later, after learning from the first, the second proposal was accepted. This proposal is posted on <a href="https://github.com/neggen/Writing-Samples/blob/main/eggen_hst_science_2020.pdf">github.</a></p>
+
+								<p>The above modeling, and subsequent investigation, found Pox 186 to be a strong candidate of a blow-away. Preliminary results were presented at the <a href="https://github.com/neggen/Published-Papers-and-Poster/blob/main/AAS_Eggen_Poster.pdf">2020 American Astronomical Society meeting</a>, and the full paper was <a href="http://doi.org/10.3847/1538-4357/abe85d">published in the spring of 2021.</a> A copy of it is also uploaded on <a href="https://github.com/neggen/Published-Papers-and-Poster/blob/main/Eggen_2021_ApJ_912_12.pdf">github.</a> If confirmed by the new HST data it would be the first ever observation of a galaxy in such a state.</p>
+
+								<p>If you are interested, I wrote a public article about the finding that is <a href="https://github.com/neggen/Writing-Samples/blob/main/Pox%20Public%20Article.pdf">uploaded on github.</a></p>
+								
+								<ul class="actions">
+									<li><a href="file:///C:/Users/Work/Documents/GitHub/neggen.github.io/index.html#work" class="button">&larr; Work</a></li>
+								</ul>
+							</article>
+
+						<!-- IFU -->
+							<article id="IFU">
+								<ul class="actions">
+									<li><a href="file:///C:/Users/Work/Documents/GitHub/neggen.github.io/index.html#grad" class="button">&larr; Graduate Researcher</a></li>
+								</ul>
+
+								<h4>Integral Field Unit Data and its Intrinsic Complexities</h4>
+
+								<p>These data are a more advanced form of the more typical single-slit spectroscopy. Single-slit spectroscopy works by using a slit-shaped window to collect light from an object, and then splits that light into all its wavelengths, or colors, into what we call a spectra. This measures the amount of light at each wavelength, and has been the backbone of astronomy since its implementation in the field.</p> 
+
+								<p>Integral Field Spectroscopy takes this idea a step further, and uses a bundle of fiber-optic cables to take many spectra in a grid on an object. Each fiber-optic cable is its own window to collect light from it's position in the grid, and a spectra is made from each one. This results in data that has both the spectral (color) dimension like single-slit, but also two spatial dimensions. In this specific projects case, there are 750 fibers in the bundle, or 750 spectra. Below is an example of how the bundle of fibers, each one represented by a hexagon, would fall over an object of interest.</p>
+
+								<span class="image main"><img src="images/IFU.PNG" alt="" /><caption><font size = "-1">The left bundle would be placed on empty sky for calibration purposes, with the right bundle on the galaxy.</font></caption></span>
+
+								<p>One ramification of this number of spectra is that the data reduction process must be automated. In order to take best advantage of the data, I edited, and <a href="https://github.com/neggen/Astrophysics-python-scripts/blob/master/scatlightsub.py">in some cases rewrote</a> sections of the provided pipeline that automatically processes these 750 spectra. Python scripts utilizing least squares fitting was primarily used for the rewritten sections. These improvements in the reduction pipeline resulted in correctly processed data where the pipeline was broken, up to a 10% decrease in the underlying noise overall, and would turn out to be crucial to the resulting analysis.</p>
+
+								<h4>Extra Challenges</h4>
+
+								<p>When proposing to acquire this dataset, the primary goal was to measure the amount of light at two colors, then measure the ratio between them, and use the spatial information to create a map of the ratio. This ratio is strongly influenced by the ionization state of the gas that emits it within the galaxy, and therefore measuring it would give a measure of the ionization state, or how many electrons a typical atom has lost in the galaxy. Unfortunately the creation of this map was impossible due to two major problems with the data.</p>
+
+								<p>The first was a charge transfer inefficiency in a part of the detector. This problem results in things being "smeared" across the image, highlighted below. While this behavior was modeled, it is impossible to know exactly where the smeared charge should be put back, and so this problem was intractable. The consequence of this problem was colors that were very different (i.e. red and blue) could not be compared reliably due to <a href="https://en.wikipedia.org/wiki/Extinction_(astronomy)">extinction.</a></p>
+
+								<span class="image fit"><img src="images/smearing.PNG" alt="" /><caption><font size = "-1"></font>Vertical smearing caused when the detector reads out the image.</caption></span>
+								<p>The other problem was simply that the telescope used was not sensitive enough to measure the bluer of the two colors of interest across the fiber bundle. This problem was exacerbated by the galaxy being fainter than expected at the bluer color of interest, indicating it was more extreme than anticipated. When combined with the smearing problem, limits on the color ratio was limited to an overall lower limit. This alone was not enough for a academic paper, so a different avenue of research was needed.</p>
+
+								<h4>The Road Less Traveled By</h4>
+								<p>These two limitations of the data, not being able to compare wildly different wavelengths and lack of sensitivity at very blue wavelengths, meant that only aspects of the data that were bright and contained in a narrow wavelength range could be investigated further. Luckily, this exact scenario existed in the data, and further investigation into it found exciting implications.</p>
+
+								<p>Generally, atoms and ions interact with light by either absorbing it or emitting it. The structure of the atom, how many protons and neutrons are in its nucleus and electrons orbit it, determine the wavelengths, or colors, of light it will interact with. In astronomy this manifests in the form of <a href="file:///C:/Users/Work/Documents/GitHub/neggen.github.io/images/PoxSpectra.png">spectral lines.</a> The key here is that a spectral line is emitted by one type of atom or ion. These lines are useful in astronomy for a variety of reasons. Here, these lines were useful due to the distribution of the light within the line because that distribution implied something about how the material that emitted the light is moving.</p>
+
+								<ul class="actions">
+									<li><a href="file:///C:/Users/Work/Documents/GitHub/neggen.github.io/index.html#grad" class="button">&larr; Graduate Researcher</a></li>
+								</ul>
 							</article>
 
 						<!-- About -->
@@ -114,7 +182,7 @@
 								<h2 class="major">About Me</h2>
 								<span class="image fit"><img src="images/MyHeadSmaller.jpg" alt=""/></span>
 								<!--<p>In my senior year of high school, the school newspaper was going around to graduating seniors and asking them, "What do you want to be when you grow up?" My interst in astronomy was beginning to bud at that time, and so even though I didn't fully believe it I answered, "An Astrophysicist." My lack of belief in this future was evident in my original choice of major in college, Physics rather than Astronomy. It was the writings of the philosopher Alan Watts that gave me the final push to take the chance on Astrophysics, and so I threw myself into research projects and added two more majors, Math and Astronomy, in a bid to impress future graduate schools. </p>-->
-								<p>When I decided to apply to graduate schools for Astrophysics back in 2015, I did so not for the prestige of earning a PhD, but because being an Astronomer was my dream. By early 2020, however, it became clear that Astronomy was not the calling I thought it to be. Therefore I began working toward graduation, and as I thought about my future beyond academia, it occurred to me that in my 21 years of schooling I was never taught how to understand myself. So in early October 2020 I graduated with a Masters, and decided to take an extended break. In the year since, I've taken the opportunity to explore myself, my interests, and the career opportunities available to me.</p>
+								<p>When I decided to apply to graduate schools for Astrophysics back in 2015, I did so not for the prestige of earning a PhD, but because being an Astronomer was my dream. By early 2020, however, it became clear that Astronomy was not the calling I thought it to be. Therefore I began working toward graduation, and as I thought about my future beyond academia, it occurred to me that in my 21 years of schooling I was never taught how to understand myself. So in early October 2020 I graduated with a Masters, and decided to take an extended break. In the year since, I've taken the opportunity to explore myself, my interests, and learn new skills.</p>
 								<p>
 									
 								</p>
@@ -134,7 +202,7 @@
 						<!-- Background? -->
 							<article id="background">
 								<h3 class="major">The Math Hidden in the Background</h3>
-								<h4>and what it says about Data Science</h4>
+								<h4>and what it says about data</h4>
 								<span class="image main"><img src="images/bg.png" alt="" /><caption><font size = "-1">Image Credit: <a href="https://old.reddit.com/r/dataisbeautiful/comments/lnsse0/oc_prime_numbers_plotted_on_polar_coordinates/">/u/upzylon</a></font></caption></span>
 								<p>Above is what you get when you plot prime numbers in <a href="https://nrich.maths.org/2755">polar coordinates.</a> Each number is plotted its distance away from the origin, and at an angle equal to its value in radians, where an angle of 2π radians is a full circle around.</p> 
 								<!--  -->
@@ -152,11 +220,11 @@
 								<p>This same pattern is present for the other two approximations of π mentioned earlier. Zooming into the center of the original image would reveal the spirals formed from how close 2π is to 6. In addition, those "rays" at the edges of the original image are in reality the beginnings of the spirals formed from how close 2π is to 710 &frasl; 113. The photo is just not zoomed out enough to make the curvature noticable, and so they look straight.</p>
 
 								<h3>Why do I care so much?</h3>
-								<p>Well, I like math. More interesting, however, is what it highlights about Data Science.</p>
+								<p>Well, I like math. More interesting, however, is what it highlights about data.</p>
 
-								<p>The way in which data is represented can drastically affect the way in which it's interpreted. Here, the decision to plot prime numbers in a polar coordinate system was completely arbitrary. For example, primes can just as easily be represented on a number line, but using a polar coordinate system revealed new patterns not present on the number line. If the goal was to study primes, it would be easy, tempting even, to immediately assume that the patterns revealed are due to the primes rather than an outside influence. In this case, an understanding of the math embedded in the coordinate system saved us from a costly misinterpretation of the data.</p>
+								<p>The way in which data are represented can drastically affect the way in which it's interpreted. Here, the decision to plot prime numbers in a polar coordinate system was completely arbitrary. For example, primes can just as easily be represented on a number line, but using a polar coordinate system revealed new patterns not present on the number line. If the goal was to study primes, it would be easy, tempting even, to immediately assume that the patterns revealed are due to the primes rather than an outside influence. In this case, an understanding of the math embedded in the coordinate system saved us from a costly misinterpretation of the data.</p>
 
-								<p>The same can be said more generally about Data Science, and indeed, all Data Analysis, where math forms the foundation of the field. One of the first lessons I learned as a graduate researcher was that freely available software packages are useful, but only to a point. When dealing with challenging data, the flexibility and understanding of self written code greatly outweighs black-box software packages. Like an artisan, much of a Data Scientist's skill stems from their understanding of their tools, which in this case is the math hidden in the background.</p>
+								<p>The same can be said more generally about all Data Analysis, where math forms the foundation of the field. One of the first lessons I learned as a graduate researcher was that freely available software packages are useful, but only to a point. When dealing with challenging data, the flexibility and understanding of self written code greatly outweighs black-box software packages. Like an artisan, the skill of someone who works with data stems from their understanding of their tools, which in this case is the math hidden in the background.</p>
 							</article>
 						
 						<!-- Elements -->
