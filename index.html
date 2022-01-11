@@ -81,17 +81,17 @@
 													<td>Team Management, Presentation, Syllabus Writing, Teaching</td>
 												</tr>
 												<tr>
-													<td><a href="">Undergraduate Researcher</a></td>
+													<td><a href="https://neggen.github.io/index.html#undergrad">Undergraduate Researcher</a></td>
 													<td>Explored the astronomical research space through a variety of projects.</td>
 													<td>Project Management, Modeling, Research, Python</td>
 												</tr>
 												<tr>
-													<td><a href="">Materials Lab Assistant</a></td>
+													<td>Materials Lab Assistant</td>
 													<td>Performed diagnostic tests on various construction materials</td>
 													<td>Linear Regression, Research, Excel</td>
 												</tr>
 												<tr>
-													<td><a href="https://neggen.github.io/#about">Gap Year</a></td>
+													<td>Gap Year</td>
 													<td>Utilized what I had learned in graduate school to focus on myself, learn new skills, and hone existing ones.</td>
 													<td>Machine Learning, Neural Networks, SQL, Writing, Game Design, Game Theory, Philosophy, Ancient History</td>
 												</tr>
@@ -181,7 +181,7 @@
 
 						<!-- Teaching -->
 							<article id="teaching">
-								<h2 class="major">Head Teaching Assistant</h2>
+								<h2>Head Teaching Assistant</h2>
 								<ul class="actions">
 									<li><a href="https://neggen.github.io/index.html#work" class="button">&larr; Work</a></li>
 								</ul>
@@ -189,6 +189,36 @@
 								<p>In my second semester of teaching I was chosen to be the Head Teaching Assistant (TA). In this role I lead the team of 15 graduate and undergraduate TAs for the lab portion of the Introductory Astronomy course. I lead weekly team meetings, redesigned the syllabus, organized weekly public stargazing events, <a href="https://docs.google.com/presentation/d/1GUVQFHQ4F3gsGr-awGxU7fpIL_i96VVMGndlhc5nELM/edit?usp=sharing">gave public talks,</a> and was responsible for troubleshooting any problems that popped up in the labs.</p>
 
 								<p>Beyond being the Head TA, I taught for five semesters. This extensive experience teaching primarily non-STEM students and giving science talks to the general public has trained me to present complex ideas to general audiences in an understandable way.</p>
+
+								<ul class="actions">
+									<li><a href="https://neggen.github.io/index.html#work" class="button">&larr; Work</a></li>
+								</ul>
+							</article>
+
+						<!-- Undergrad -->
+							<article id="undergrad">
+								<h2>Undergraduate Research</h2>
+								<ul class="actions">
+									<li><a href="https://neggen.github.io/index.html#work" class="button">&larr; Work</a></li>
+								</ul>
+								<h3 class="major">Overview</h3>
+								<p>My primary goal in my undergradute career was to get as much varied experience as possible within the astronomical research space. Over two and a half years I completed three research projects spanning the three major forms of research done in astrophysics: observational, computational, and instrumentation. I learned to balance these multiple projects while taking classes to earn a triple major. </p>
+
+								<p>Through these projects I grew in a multitude of ways. I was introduced to python, c++, and the fundamentals of research. I used tools such as the star-spot modeling code PHOEBE, the open-source data analysis framework used by CERN called ROOT, and Lomb-Scargle periodograms. Finally, these projects gave me laboratory experiences at the WIYN observatory on Kitt Peak in Arizona, and the worlds deepest clean room facility at SNOLAB in Sudbury Canada. If you are interested, below I describe the science goals of each of these projects, and describe more specifically what I did.</p>
+
+								<h3 class="major">Variability in V4046 Sagittarius</h3>
+								<p>V4046 Sagittarii is a binary star system with two T-Tauri stars. T-Tauri stars are pre-main sequence stars and therefore their brightnesses are dependent on the material accreting from their circumstellar disk. In the case of a single star, this accretion and its effects are well understood. However in the binary case, the relation between the stars and their circumbinary disk becomes significantly more complicated. Theory suggests higher eccentricity binary orbits will lead to “sharper”, more periodic accretion events, which is supported by observations. What is not well understood is the case where the binary orbit is circular because accretion events are more dependent on the physics of the circumbinary disk and less on the orbits of the stars. The overall goal of my research was to examine such a case and to provide insight into the complex interactions between the circumbinary disk evolution and accretion.</p>
+
+								<p>The data I worked with were high-cadence optical imaging from the Las Cumbres Observatory Global Telescope Network in the U, B, V, R, and I bands. I used python and IRAF to do photometry in order to make light curves for each of the respective bands. Using the light curves I completed a Fourier analysis and showed that V4046 Sagittarii is periodically varying. Rather than immediately explore accretion related explanations, I first investigated if star-spots could explain the variability. I created a star-spot model using PHOEBE and found good agreement to the periodic variability. The remaining stochastic events were attributed to variability due to accretion, and unfortunately my time to work on the project was over.</p>
+
+								<p>As a part of being on the research team this project was done in, I also observed on Kitt Peak in Arizona using the WIYN 3.5m observatory. After observing in person I continued to assist the group by assuming the responsibility of remote observing from Madison, WI for a portion of observing nights.</p>
+
+								<h3 class="major">Neutron Calibration Simulations at Snolab</h3>
+								<p>I was fortunate to have the opportunity to be an intern at SNOLAB in Sudbury, Canada. SNOLAB specializes in neutrino and dark matter physics, and is located underground in an operating mine, 6800 feet below ground. At SNOLAB I worked on the MiniCLEAN experiment, a direct dark matter detection experiment utilizing liquid argon as its detection medium. Its goal was to test a new detector design where the photomultiplier tubes (PMTs) are directly in the liquid argon. Normal detectors have their PMTS in the wall of the inner vessel, where the cryogenic liquid is contained. Consequently, the normal design results in higher noise levels because most particles deposit their energy in the argon near the walls of the inner vessel before reaching the center. Therefore most experiments are only interested in events away from the walls. In MiniCLEAN, since the PMTs are directly in the cryogenic liquid it is possible to block out those wall events and reduce the noise of the detector. While at SNOLAB I worked on setting up and connecting a condenser system that cools and condenses the argon into a liquid before it flows into the inner vessel.</p> 
+								<p>The following semester I helped to remotely monitor the experiment as it continued to fill. In addition, I ran neutron calibration simulations using RAT simulation software, Root, and C++ to get an estimate on how many neutron events the PMTs will detect when doing the real neutron calibrations. This estimate was used to determine how long these calibrations needed to be run. To run the neutron calibrations, a chunk of AmBe is brought into the lab to emit neutrons at a known rate. Therefore determining how long the calibrations would take was important because introducing particle producing sources to a physics laboratory designed to limit particle backgrounds needed to be carefully controlled.</p>
+
+								<h3 class="major">Persistence Characterization on SALT's NIR Camera</h3>
+								<p>My primary experience in astronomical instrumentation was on an HgCdTe H2RG, near infrared (NIR) detector with a 1.7-micron cutoff. I primarily measured and characterizing persistence — the emission of charges that were trapped in a previous exposure when taking subsequent exposures — which is critical to high precision measurements. This included doing persistence decay and suppression tests, in addition to measuring temperature dependence. I wrote python scripts to take and analyze the data as well as visualize the results. This work contributed to the overall persistence characterization <a href="http://dx.doi.org/10.1117/12.2233227">paper</a>, and is also on <a href="https://github.com/neggen/Published-Papers-and-Poster/blob/main/persistence_removal_paper_spie_v7.pdf">github</a></p>
 
 								<ul class="actions">
 									<li><a href="https://neggen.github.io/index.html#work" class="button">&larr; Work</a></li>
